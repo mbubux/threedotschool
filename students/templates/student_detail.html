@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD -->
+{% block htmlhead %}
+
+{% load static %}
+
+
+{% block title %}Student-detail{% endblock %}
+
+
+<!-- CSS STYLES -->
+<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/student_detail.css' %}">
+
+{% endblock htmlhead %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+{% include "navbar.html" %}
+
+{% include "header.html" %}
+
+
+<div class="action-btn">
+    <!-- Edit button -->
+    <div class="btn">
+        <img src="{% static 'assets/icons/edit.svg' %}" alt="Edit icon">
+        <a href="/">Edit</a>
+    </div>
+
+    <!-- Delete button -->
+    <div class="btn">
+        <img src="{% static 'assets/icons/delete.svg' %}" alt="Delete icon">
+        <a href="/">Delete</a>
+    </div>
+</div>
+
+
+
+<!-- STUDENT'S DETAILS -->
+<div class="main-content">
+
+    <div class="student-detail">
+        <!-- <div class="student-photo">
+            <img src="{{ student.student_photo.url }}" alt="Student's photo">
+        </div> -->
+
+        <div class="detail-section">
+
+            <div class="section basic-detail">
+
+                <p>Registration no.: <span></span></p>
+    
+                <p>Name: <span>{{ student.student_name }}</span></p>
+    
+                <p>Class: <span>{{ student.class_admitted }}</span></p>
+
+                <p>Roll no.: <span></span></p>
+                
+                <p>Date of birth: <span>{{ student.date_of_birth }}</span></p>
+
+                <p>Sex: <span>{{ student.sex }}</span></p>
+
+                <p>Father's name: <span>{{ student.father_name }}</span></p>
+    
+                <p>Mother's name: <span>{{ student.mother_name }}</span></p>
+    
+                <p>Mobile no.: <span>{{ student.mobile_number }}</span></p>
+
+                <p>Alternate mobile no.: <span>{{ student.alternate_mobile_number }}</span></p>
+    
+                <p>AADHAAR no.: <span>{{ student.aadhaar_number }}</span></p>
+
+            </div>
+
+
+            <div class="section address">
+
+                <p>Vill/Town: <span>{{ student.village_town }}</span></p>
+                <p>P.O: <span>{{ student.post_office }}</span></p>
+                
+    
+                <p>P.S: <span>{{ student.police_station }}</span></p>
+                <p>Gaon Panchayat: <span>{{ student.gaon_panchayat }}</span></p>
+               
+    
+                <p>Educational block: <span>{{ student.educational_block }}</span></p>
+                <p>Cluster: <span>{{ student.cluster }}</span></p>
+               
+    
+                <p>District: <span>{{ student.district }}</span></p>
+                <p>State: <span>{{ student.state }}</span></p>
+          
+    
+                <p>Country: <span>{{ student.country }}</span></p>
+                <p>PIN: <span>{{ student.pin }}</span></p>
+
+            </div>
+
+            <div class="section bank-detail">
+
+                <p>Bank name: <span>{{ student.bank_name }}</span></p>
+                <p>Account no.: <span>{{ student.account_number }}</span></p>
+
+    
+                <p>Bank branch: <span>{{ student.bank_branch_name }}</span></p>
+                <p>IFSC: <span>{{ student.ifsc_code }}</span></p>
+
+            </div>
+
+
+        </div>
+
+        <!-- <a href="/">Print</a> -->
+        <button class="btn">Print</button>
+
+    </div>
+
+</div>
+
+
+{% include "footer.html" %}
+
+{% endblock %}

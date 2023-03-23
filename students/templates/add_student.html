@@ -1,0 +1,301 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD -->
+{% block htmlhead %}
+
+{% load static %}
+
+
+{% block title %}Add-student{% endblock %}
+
+<!-- CSS STYLES -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/add_student.css' %}">
+
+{% endblock htmlhead %}
+
+
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+{% include "navbar.html" %}
+
+{% include "header.html" %}
+
+
+<!-- ADD STUDENT FORM -->
+<div class="main-content">
+
+    <!-- Alert Message -->
+    {% for message in messages %}
+
+    <div class="alert {{ message.tags }}">
+        {% if message.tags == "success" %}
+        <div class="alert-msg">
+            <img src="{% static 'assets/icons/tick_green.svg' %}" alt="Success icon">
+            <p>{{ message }}</p>
+        </div>
+        <button class="btn">
+            <img src="{% static 'assets/icons/cross.svg' %}" alt="Cross icon" id="alert-close-icon">
+        </button>
+
+        {% elif message.tags == "error" %}
+        <div class="alert-msg">
+            <img src="{% static 'assets/icons/error_red.svg' %}" alt="Error icon">
+            <p>{{ message }}</p>
+        </div>
+        <button class="btn">
+            <img src="{% static 'assets/icons/cross.svg' %}" alt="Cross icon" id="alert-close-icon">
+        </button>
+        {% endif %}
+        <!-- <p>{{ message }}</p>
+        <button class="btn">
+            <img src="{% static 'assets/icons/cross.svg' %}" alt="Cross icon" id="alert-close-icon">
+        </button> -->
+    </div>
+
+    {% endfor %}
+
+
+    <div class="add-student-container">
+        <h3>REGISTRATION FORM</h3>
+
+        <!-- Registration Form -->
+        <form action="{% url 'add_student' %}" method="post">
+
+            {% csrf_token %}
+
+            <!-- STUDENT'S DETAILS -->
+            <div class="form-section">
+                <div class="form-section-title">
+                    <p>Student's Details</p>
+                    <img src="{% static 'assets/icons/list.svg' %}" alt="List icon">
+                </div>
+
+                <div class="form-input">
+
+                    <div class="input-group">
+                        <label for="student-name">Name of the student:</label>
+                        <input type="text" name="student-name" id="student-name">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="father-name">Father's name:</label>
+                        <input type="text" name="father-name" id="father-name">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mother-name">Mother's name:</label>
+                        <input type="text" name="mother-name" id="mother-name">
+                    </div>
+
+                    <div class="input-group">
+                        <div class="wrapper" style="width: 25%;">
+                            <label for="dob">Date of birth:</label>
+                            <img src="{% static 'assets/icons/calendar.svg' %}" alt="Calendar icon">
+                            <input type="date" name="dob" id="dob">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="wrapper" style="width: 20%;">
+                            <label for="sex">Sex:</label>
+                            <img src="{% static 'assets/icons/dropdown.svg' %}" alt="Dropdown icon">
+                            <select name="sex" id="sex">
+                                <option value="none" selected disabled hidden>Select an option</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Others">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group" style="width: 25%;">
+                        <label for="mobile-number">Mobile no.:</label>
+                        <input type="number" name="mobile-number" id="mobile-number">
+                    </div>
+
+                    <div class="input-group" style="width: 25%;">
+                        <label for="alternate-mobile-number">Alternate mobile no.:</label>
+                        <input type="number" name="alternate-mobile-number" id="alternate-mobile-number">
+                    </div>
+
+                    <div class="input-group" style="width: 50%;">
+                        <label for="aadhaar-number">AADHAAR no.:</label>
+                        <input type="number" name="aadhaar-number" id="aadhaar-number">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- ADDRESS -->
+            <div class="form-section">
+                <div class="form-section-title">
+                    <p>Address</p>
+                    <img src="{% static 'assets/icons/list.svg' %}" alt="List icon">
+                </div>
+
+                <div class="form-input" style="grid-template-columns: auto auto;">
+
+                    <div class="input-group">
+                        <label for="vill-town">Vill/Town:</label>
+                        <input type="text" name="vill-town" id="vill-town">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="post-office">P.O.:</label>
+                        <input type="text" name="post-office" id="post-office">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="police-station">P.S.:</label>
+                        <input type="text" name="police-station" id="police-station">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="gaon-panchayat">Gaon Panchayat:</label>
+                        <input type="text" name="gaon-panchayat" id="gaon-panchayat">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="educational-block">Educational block:</label>
+                        <input type="text" name="educational-block" id="educational-block">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="cluster">Cluster:</label>
+                        <input type="text" name="cluster" id="cluster">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="district">District:</label>
+                        <input type="text" name="district" id="district">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="state">State:</label>
+                        <input type="text" name="state" id="state">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="country">Country:</label>
+                        <input type="text" name="country" id="country">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="pin">PIN:</label>
+                        <input type="number" name="pin" id="pin">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- EDUCATIONAL DETAILS -->
+            <div class="form-section">
+
+                <div class="form-section-title">
+                    <p>Educational Details</p>
+                    <img src="{% static 'assets/icons/list.svg' %}" alt="List icon">
+                </div>
+
+                <div class="form-input">
+
+                    <div class="input-group">
+                        <div class="wrapper" style="width: 30%;">
+                            <label for="class-admitted">Class to be admitted:</label>
+                            <img src="{% static 'assets/icons/dropdown.svg' %}" alt="Dropdown icon">
+                            <select name="class-admitted" id="class-admitted">
+                                <option value="none" selected disabled hidden>Select an option</option>
+                                <option value="Class 1">Class 1</option>
+                                <option value="Class 2">Class 2</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <!-- BANK DETAILS -->
+            <div class="form-section">
+
+                <div class="form-section-title">
+                    <p>Bank Details</p>
+                    <img src="{% static 'assets/icons/list.svg' %}" alt="List icon">
+                </div>
+
+
+                <div class="form-input">
+
+                    <div class="input-group">
+                        <label for="bank-name">Name of the bank:</label>
+                        <input type="text" name="bank-name" id="bank-name">
+                    </div>
+
+                    <div class="input-group" style="width: 30%;">
+                        <label for="account-number">Account no.:</label>
+                        <input type="number" name="account-number" id="account-number">
+                    </div>
+
+                    <div class="input-group" style="width: 60%;">
+                        <label for="branch-name">Branch name:</label>
+                        <input type="text" name="branch-name" id="branch-name">
+                    </div>
+
+                    <div class="input-group" style="width: 25%;">
+                        <label for="ifsc">IFSC code:</label>
+                        <input type="text" name="ifsc" id="ifsc">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- OTHER DETAILS -->
+            <div class="form-section">
+
+                <div class="form-section-title">
+                    <p>Other Details</p>
+                    <img src="{% static 'assets/icons/list.svg' %}" alt="List icon">
+                </div>
+
+                <div class="form-input" style="grid-template-columns: auto auto;">
+
+                    <div class="input-group">
+                        <label for="st_photo">Upload student's photo:</label>
+                        <input type="file" name="st_photo" id="st_photo" accept="image/jpg, image/jpeg">
+                        <small style="padding-top: 0.3rem; font-size: 0.671rem; color: var(--theme-color);">Note:
+                            JPG/JPEG only (50KB - 100KB)</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="dob_certificate">Upload birth certificate:</label>
+                        <input type="file" name="dob_certificate" id="dob_certificate" accept=".pdf">
+                        <small style="padding-top: 0.3rem; font-size: 0.671rem; color: var(--theme-color);">Note: PDF
+                            only (50KB - 100KB)</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit">Admit Student</button>
+        </form>
+
+    </div>
+</div>
+
+
+{% include "footer.html" %}
+
+<!-- JAVASCRIPT -->
+<script type="text/javascript" src="{% static 'js/alert.js' %}"></script>
+
+
+{% endblock %}

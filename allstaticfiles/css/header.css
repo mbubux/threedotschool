@@ -1,0 +1,97 @@
+/* HEADER STYLES */
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem 3rem;
+    width: calc(100% - 15%);
+    height: 10%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .school {
+    min-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+.header .school #school-logo {
+    width: 13%;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+.header .school .school-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.header .school .school-detail .school-name {
+    font-weight: 500;
+    font-size: 1.131rem;
+    color: var(--theme-color);
+}
+
+.header .school .school-detail .school-address {
+    font-weight: 400;
+    font-size: 0.591rem;
+}
+
+.header .admin {
+    min-width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header .admin .admin-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+
+.header .admin .admin-detail #salutation {
+    font-weight: 400;
+    font-size: 0.731rem;
+}
+
+.header .admin .admin-detail #admin-name {
+    font-weight: 500;
+    font-size: 0.781rem;
+}
+
+.header .admin .admin-detail #greet {
+    font-weight: 300;
+    font-size: 0.731rem;
+}
+
+
+.header .admin .admin-photo {
+    padding: 0.35rem;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-color);
+    border-radius: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.header .admin .admin-photo img {
+    width: 110%;
+    border-radius: 50%;
+    object-fit: cover;
+}

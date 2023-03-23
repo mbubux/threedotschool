@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD CONTENTS -->
+{% block htmlhead %}
+
+{% load static %}
+
+<!-- {% block title %}Login{% endblock %} -->
+
+<!-- CSS STYLES -->
+<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+{% endblock htmlhead %}
+
+<!-- MAIN BODY CONTENTS -->
+{% block content %}
+
+<div class="login-container">
+
+    <!-- Log-in page image -->
+    <div class="login-img">
+        <img src="{% static 'assets/images/login_img.png' %}" alt="Image">
+    </div>
+
+    <!-- Log-in form -->
+    <div class="login-form">
+        <form action="/" method="post">
+
+            {% csrf_token %}
+
+
+            <div class="welcome">
+                <h3>Welcome</h3>
+                <p>Please enter your credentials.</p>
+            </div>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter your username" required>
+                <!-- <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required> -->
+            </div>
+
+            <div class="input-group">
+                <div class="wrapper">
+                    <label for="password">Password</label>
+                    <div class="show-hide-icon">
+                        <img src="{% static 'assets/icons/pass_show.svg' %}" alt="Show password icon"
+                            id="pass-show-icon" style="display: block;">
+                        <img src="{% static 'assets/icons/pass_hide.svg' %}" alt="Hide password icon"
+                            id="pass-hide-icon" style="display: none;">
+
+                    </div>
+                    <input type="password" name="password" id="password" placeholder="Enter your password" required>
+                </div>
+            </div>
+
+            <div class="remember-forget">
+                <div class="remember">
+                    <label for="remember">
+                        <input type="checkbox" name="remember" id="remember"> Remember for 7 days
+                    </label>
+                </div>
+                <div class="forgot">
+                    <a href="/">Forgot password?</a>
+                </div>
+            </div>
+
+            <button type="submit">Log in</button>
+
+            <div class="other">
+                <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+    function toggleIcon() {
+
+        let show_pass = document.querySelector('#pass-show-icon');
+        let hide_pass = document.querySelector('#pass-hide-icon');
+
+        const password = document.querySelector("#password");
+
+        if (show_pass.style.display === "none") {
+            show_pass.style.display = "block";
+            hide_pass.style.display = "none";
+            password.type = "password";
+        }
+        else if (hide_pass.style.display === "none") {
+            hide_pass.style.display = "block";
+            show_pass.style.display = "none";
+            password.type = "text";
+        }
+    }
+
+    document.querySelector('.show-hide-icon').addEventListener("click", toggleIcon);
+</script>
+
+{% endblock %}

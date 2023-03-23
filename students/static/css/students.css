@@ -1,0 +1,217 @@
+/* STUDENTS PAGE */
+.main-content {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    padding: 1.5rem 1.5rem 7rem;
+    margin-top: 3rem;
+    width: 85%;
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    border-radius: 1rem;
+}
+
+.students-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    gap: 7rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.students-container .action-field {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.students-container .action-field .search {
+    width: 30%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+}
+
+.students-container .action-field .search form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.students-container .action-field .search form input {
+    padding: 0.7rem 1rem;
+    /* margin: 0; */
+    width: 85%;
+    height: 100%;
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    outline: none;
+}
+
+.students-container .action-field .search form input:focus {
+    border: 1px solid var(--theme-color);
+    caret-color: var(--theme-color);
+}
+
+.students-container .action-field .search form button {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-color);
+    border: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.students-container .action-field .search form button img {
+    height: 24px;
+    object-fit: contain;
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+}
+
+.students-container .action-field .btn {
+    padding: 0.5rem 1.5rem;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--theme-color);
+    border-radius: 0.5rem;
+}
+
+.students-container .action-field .btn .btn-text {
+    font-weight: 600;
+    color: var(--white);
+}
+
+
+.students-container .action-field .btn .btn-icon {
+    height: 24px;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+/* STUDENT DATA */
+.student-data::before {
+    position: absolute;
+    left: 1.5rem;
+    top: 18%;
+    padding: 0.7rem 3rem 2rem;
+    content: "Student's list ⌘";
+    background-color: var(--black);
+    border-radius: 1rem 1rem 0 0;
+    font-size: 1.531rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--white);
+    z-index: -1;
+}
+
+
+.student-data {
+    padding: 1.5rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: start;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 1rem;
+}
+
+
+table {
+    width: 100%;
+    /* border: 1px solid var(--theme-color); */
+    border-collapse: collapse;
+}
+
+table thead th:first-child {
+    border-top-left-radius: 1rem;
+}
+
+table thead th:last-child {
+    border-top-right-radius: 1rem;
+}
+
+table th {
+    padding: 0.9rem 1rem;
+    background-color: var(--semi-black);
+    color: var(--white);
+    text-align: left;
+    cursor: none;
+    font-size: 0.971rem;
+    font-weight: 500;
+    /* border: 1px solid var(--black); */
+}
+
+table td {
+    padding: 0.7rem 1rem;
+    text-align: left;
+    font-size: 0.831rem;
+    font-weight: 400;
+    /* border-left: 1px solid var(--black); */
+}
+
+table td .action-btn {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.3rem 1rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    /* gap: 1rem; */
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-color);
+    border-radius: 0.5rem;
+}
+
+table td .action-btn img {
+    height: 24px;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+table td .action-btn a {
+    text-decoration: none;
+    font-size: 0.831rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+
+table td:hover {
+    text-decoration: underline;
+    color: var(--theme-color);
+    cursor: pointer;
+}
+
+table tr:nth-child(odd) {
+    background-color: var(--bg-color);
+}
+
+table tr:hover {
+    background-color: var(--theme-color-light);
+    transition: background-color 0.3ms linear;
+}

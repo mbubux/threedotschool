@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD -->
+{% block htmlhead %}
+
+{% load static %}
+
+
+{% block title %}Search-student{% endblock %}
+
+
+<!-- CSS STYLES -->
+<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/students.css' %}">
+<link rel="stylesheet" href="{% static 'css/search_student.css' %}">
+
+{% endblock htmlhead %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+{% include "navbar.html" %}
+
+{% include "header.html" %}
+
+<!-- STUDENTS PAGE -->
+<div class="main-content">
+
+    <!-- Alert Message -->
+    <!-- {% for message in messages %}
+
+    <div class="alert {{ message.tags }}">
+        {% if message.tags == "warning" %}
+
+        <div class="alert-msg">
+            <img src="{% static 'assets/icons/warning_yellow.svg' %}" alt="Warning icon">
+            <p>{{ message }}</p>
+        </div>
+        <button class="btn">
+            <img src="{% static 'assets/icons/cross.svg' %}" alt="Cross icon" id="alert-close-icon">
+        </button>
+
+        {% endif %}
+
+    </div>
+
+    {% endfor %} -->
+
+
+    <div class="students-container">
+
+        <div class="action-field">
+            <div class="search">
+                <form action="{% url 'search_student' %}" method="get">
+                    <input type="text" name="student" id="student" placeholder="Search student">
+
+                    <button type="submit">
+                        <img src="{% static 'assets/icons/search.svg' %}" alt="Search icon">
+                    </button>
+                   
+                </form>
+            </div>
+
+        </div>
+
+        <!-- DATA TABLES -->
+        <div class="student-data">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Registration id.</th>
+                        <th>Name of the student</th>
+                        <th>Father's name</th>
+                        <th>Class</th>
+                        <th>Sex</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                {% for student in students_list %}
+                <tr>
+                    <td>1234</td>
+                    <td>{{ student.student_name }}</td>
+                    <td>{{ student.father_name }}</td>
+                    <td>{{ student.class_admitted }}</td>
+                    <td>{{ student.sex }}</td>
+                    <td>Active</td>
+                </tr>
+                {% endfor %}
+
+            </table>
+
+            <p style="font-size: 0.791rem; color: var(--semi-black); font-weight: 400;">Showing {{ total_count }} of {{ total_count }} students.</p>
+
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block htmlhead %}
+
+{% load static %}
+
+<!-- {% block title %}Sign Up{% endblock %} -->
+
+<!-- CSS STYLES -->
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+{% endblock htmlhead %}
+
+
+<!-- MAIN  BODY CONTENT -->
+{% block content %}
+
+<!-- <h3>Sign up</h3> -->
+
+<div class="signup-container">
+
+    <!-- Sign-up form -->
+    <div class="signup-form">
+
+        <form action="{% url 'signup' %}" method="post">
+
+            {% csrf_token %}
+
+            <div class="welcome">
+                <h3>Welcome</h3>
+                <p>Please register your account.</p>
+            </div>
+
+            <div class="form-input">
+
+                <div class="row">
+
+                    <div class="input-group">
+                        <label for="fname">First name</label>
+                        <input type="text" name="fname" id="fname" placeholder="Enter your firstname" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="lname">Last name</label>
+                        <input type="text" name="lname" id="lname" placeholder="Enter your lastname" required>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" placeholder="Create username" required>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="input-group">
+                        <label for="password1">Password</label>
+                        <input type="password" name="password1" id="password1" placeholder="Create your password"
+                            required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password2">Confirm password</label>
+                        <input type="password" name="password2" id="password2" placeholder="Confirm your password"
+                            required>
+                    </div>
+
+                </div>
+            </div>
+
+            <button type="submit">Sign up</button>
+
+            <div class="other">
+                <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+            </div>
+        </form>
+
+    </div>
+
+    <!-- Sign-up page image -->
+    <div class="signup-img">
+        <img src="{% static 'assets/images/login_img.png' %}" alt="Image">
+    </div>
+
+</div>
+
+
+{% endblock %}

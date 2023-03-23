@@ -1,0 +1,36 @@
+/* HOMEPAGE : TIME */
+#time-container {
+    position: absolute;
+    right: 1%;
+    bottom: calc(100% - 60%);
+    padding: 1rem 1.5rem;
+    width: 16%;
+    height: 10%;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    /* gap: 0.5rem; */
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+
+#time-container .time {
+    width: 20%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.931rem;
+    color: var(--theme-color);
+    text-align: center;
+    /* background-color: black; */
+}
+
+#time-container .time p {
+    font-size: 1.931rem;
+    color: var(--theme-color);
+    text-align: center;
+}

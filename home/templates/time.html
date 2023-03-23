@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+
+<!-- HTML HEAD CONTENTS -->
+{% block htmlhead %}
+
+{% load static %}
+
+<!-- CSS STYLES -->
+<link rel="stylesheet" href="{% static 'css/time.css' %}">
+
+{% endblock htmlhead %}
+
+
+
+<!-- MAIN BODY CONTENT -->
+{% block content %}
+
+<!-- Homepage : Time -->
+<div id="time-container">
+    <div class="time">
+        <p class="hour"></p>
+    </div>
+
+    <div class="time">
+        <p>:</p>
+    </div>
+
+    <div class="time">
+        <p class="minute"></p>
+    </div>
+
+    <div class="time">
+        <p>:</p>
+    </div>
+
+    <div class="time">
+        <p class="second"></p>
+    </div>
+</div>
+
+{% endblock %}

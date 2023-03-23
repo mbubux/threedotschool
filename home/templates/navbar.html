@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD CONTENTS -->
+{% block htmlhead %}
+
+{% load static %}
+
+<!-- CSS STYLES -->
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
+{% endblock htmlhead %}
+
+
+
+<!-- MAIN BODY CONTENT -->
+{% block content %}
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <!-- APP NAME< LOGO & DEVELOPER -->
+    <div class="app-logo-name-developer">
+        <img src="{% static 'assets/icons/schmgsoft_logo.svg' %}" alt="SchMgSoft logo">
+        <div class="app-name-developer">
+            <p id="app-name">SchMgSoft</p>
+            <p id="app-developer">by <a href="https://threedot.in/" target="_blank"
+                    rel="noopener noreferrer">ThreeDot</a></p>
+        </div>
+    </div>
+
+    <!-- NAVBAR ITEMS -->
+    <div class="navbar-items">
+        <!-- HOME -->
+        <div class="nav-item-group">
+            <div class="nav-item-link">
+                <a href="/">
+                    <img src="{% static 'assets/icons/home.svg' %}" alt="Home icon" class="nav-item-link-img">
+                    <p class="nav-item-link-name">Home</p>
+                </a>
+            </div>
+        </div>
+        <!-- ACADEMICS -->
+        <div class="nav-item-group">
+            <p class="nav-item-group-title">ACADEMICS</p>
+            <div class="nav-item-link">
+                <a href="{% url 'students' %}">
+                    <img src="{% static 'assets/icons/student.svg' %}" alt="Student icon" class="nav-item-link-img">
+                    <p class="nav-item-link-name">Student</p>
+                </a>
+            </div>
+
+            <div class="nav-item-link">
+                <a href="/">
+                    <img src="{% static 'assets/icons/teacher.svg' %}" alt="Teacher icon" class="nav-item-link-img">
+                    <p class="nav-item-link-name">Teacher</p>
+                </a>
+            </div>
+        </div>
+        <!-- STAFF MANAGEMENT -->
+        <div class="nav-item-group">
+            <p class="nav-item-group-title">STAFF MANAGEMENT</p>
+            <div class="nav-item-link">
+                <a href="/">
+                    <img src="{% static 'assets/icons/teaching.svg' %}" alt="Teaching icon" class="nav-item-link-img">
+                    <p class="nav-item-link-name">Teaching</p>
+                </a>
+            </div>
+
+            <div class="nav-item-link">
+                <a href="/">
+                    <img src="{% static 'assets/icons/non_teaching.svg' %}" alt="Non-teaching icon"
+                        class="nav-item-link-img">
+                    <p class="nav-item-link-name">Non-teaching</p>
+                </a>
+            </div>
+        </div>
+        <!-- FINANCE -->
+        <div class="nav-item-group">
+            <p class="nav-item-group-title">FINANCE</p>
+            <div class="nav-item-link">
+                <a href="/">
+                    <img src="{% static 'assets/icons/fee.svg' %}" alt="Fee icon" class="nav-item-link-img">
+                    <p class="nav-item-link-name">Fee</p>
+                </a>
+            </div>
+
+            <div class="nav-item-link">
+                <a href="/">
+                    <img src="{% static 'assets/icons/salary.svg' %}" alt="Salary icon" class="nav-item-link-img">
+                    <p class="nav-item-link-name">Salary</p>
+                </a>
+            </div>
+        </div>
+        <!-- EXAM BOARD -->
+        <div class="nav-item-group">
+            <p class="nav-item-group-title">EXAM BOARD</p>
+            <div class="nav-item-link">
+                <a href="/">
+                    <img src="{% static 'assets/icons/examination.svg' %}" alt="Examination icon"
+                        class="nav-item-link-img">
+                    <p class="nav-item-link-name">Examination</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- OFFER SHOWCASE -->
+    <div class="offer">
+        <p>Offer 30% OFF<sup>*</sup></p>
+    </div>
+
+
+    <!-- OTHER -->
+    <div class="other">
+        <!-- SETTINGS -->
+        <div class="settings">
+            <a href="/">
+                <img src="{% static 'assets/icons/gear.svg' %}" alt="Gear icon" class="other-img">
+                <p class="other-text">Settings</p>
+            </a>
+        </div>
+
+
+        <!-- {% if user.is_authenticated %} -->
+        <!-- LOGOUT -->
+        <div class="logout">
+            <a href="{% url 'logout' %}">
+                <img src="{% static 'assets/icons/logout.svg' %}" alt="Logout icon" class="other-img">
+                <p class="other-text">Logout</p>
+            </a>
+        </div>
+
+        <!-- {% else %} -->
+        <!-- LOGIN -->
+        <!-- <div class="login">
+            <a href="/">
+                <img src="{% static 'assets/icons/login.svg' %}" alt="Login icon" class="other-img">
+                <p class="other-text">Login</p>
+            </a>
+        </div> -->
+
+        <!-- {% endif %} -->
+
+        
+    </div>
+</nav>
+
+{% endblock %}

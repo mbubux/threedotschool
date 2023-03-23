@@ -1,0 +1,38 @@
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0.5rem 3rem;
+    width: calc(100% - 15%);
+    height: 5%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+}
+
+footer .copyright {
+    width: fit-content;
+}
+
+footer .copyright p {
+    font-weight: 300;
+    font-size: 0.781rem;
+}
+
+footer .developer {
+    width: fit-content;
+}
+
+footer .developer p {
+    font-weight: 300;
+    font-size: 0.781rem;
+}
+
+footer .developer p a {
+    color: var(--theme-color);
+    cursor: pointer;
+}

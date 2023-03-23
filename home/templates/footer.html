@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD CONTENTS -->
+{% block htmlhead %}
+
+{% load static %}
+
+<!-- CSS STYLES -->
+<link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+{% endblock htmlhead %}
+
+
+<!-- MAIN BODY CONTENT -->
+{% block content %}
+
+<!-- FOOTER -->
+<footer>
+    <div class="copyright">
+        <p>Copyright &#169; <span id="copyright-year"></span> ThreeDot School.</p>
+    </div>
+
+    <div class="developer">
+        <p>Made with &#10084; in India by <a href="https://threedot.in/" target="_blank"
+                rel="noopener noreferrer">ThreeDot.</a></p>
+    </div>
+</footer>
+
+{% endblock %}

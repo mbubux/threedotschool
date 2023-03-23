@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD CONTENTS -->
+{% block htmlhead %}
+
+{% load static %}
+
+<!-- CSS STYLES -->
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+
+{% endblock htmlhead %}
+
+
+<!-- MAIN BODY CONTENT -->
+{% block content %}
+<!-- HOMEPAGE : DASHBOARD -->
+<div class="homepage">
+
+    <div class="homepage-dashboard">
+        <!-- CARD -->
+        <div class="card">
+            <div class="card-icon">
+                <div class="card-img">
+                    <img src="{% static 'assets/icons/student.svg' %}" alt="Icon">
+                </div>
+
+                <div class="card-menu-icon">
+                    <img src="{% static 'assets/icons/menu.svg' %}" alt="Menu icon">
+                </div>
+            </div>
+
+            <div class="card-details">
+                <p class="card-title">Students</p>
+                <p class="card-data">{{ total_students }}</p>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="card">
+            <div class="card-icon">
+                <div class="card-img">
+                    <img src="{% static 'assets/icons/teacher.svg' %}" alt="Icon">
+                </div>
+
+                <div class="card-menu-icon">
+                    <img src="{% static 'assets/icons/menu.svg' %}" alt="Menu icon">
+                </div>
+            </div>
+
+            <div class="card-details">
+                <p class="card-title">Teachers</p>
+                <p class="card-data">30+</p>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="card">
+            <div class="card-icon">
+                <div class="card-img">
+                    <img src="{% static 'assets/icons/teaching.svg' %}" alt="Icon">
+                </div>
+
+                <div class="card-menu-icon">
+                    <img src="{% static 'assets/icons/menu.svg' %}" alt="Menu icon">
+                </div>
+            </div>
+
+            <div class="card-details">
+                <p class="card-title">Teaching</p>
+                <p class="card-data">30+</p>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="card">
+            <div class="card-icon">
+                <div class="card-img">
+                    <img src="{% static 'assets/icons/non_teaching.svg' %}" alt="Icon">
+                </div>
+
+                <div class="card-menu-icon">
+                    <img src="{% static 'assets/icons/menu.svg' %}" alt="Menu icon">
+                </div>
+            </div>
+
+            <div class="card-details">
+                <p class="card-title">Non-teaching</p>
+                <p class="card-data">3</p>
+            </div>
+        </div>
+
+        <!-- CARD -->
+        <div class="card">
+            <div class="card-icon">
+                <div class="card-img">
+                    <img src="{% static 'assets/icons/fee.svg' %}" alt="Icon">
+                </div>
+
+                <div class="card-menu-icon">
+                    <img src="{% static 'assets/icons/menu.svg' %}" alt="Menu icon">
+                </div>
+            </div>
+
+            <div class="card-details">
+                <p class="card-title">Fee</p>
+                <p class="card-data">₹100000.00</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

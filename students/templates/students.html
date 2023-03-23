@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD -->
+{% block htmlhead %}
+
+{% load static %}
+
+
+{% block title %}Students{% endblock %}
+
+
+<!-- CSS STYLES -->
+<!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+<link rel="stylesheet" href="{% static 'css/students.css' %}">
+
+{% endblock htmlhead %}
+
+<!-- MAIN CONTENT -->
+{% block content %}
+
+{% include "navbar.html" %}
+
+{% include "header.html" %}
+
+<!-- STUDENTS PAGE -->
+<div class="main-content">
+    <div class="students-container">
+
+        <div class="action-field">
+            <div class="search">
+                <form action="{% url 'search_student' %}" method="get">
+                    <input type="text" name="student" id="student" placeholder="Search student">
+
+                    <button type="submit">
+                        <img src="{% static 'assets/icons/search.svg' %}" alt="Search icon">
+                    </button>
+
+                </form>
+            </div>
+
+            <a href="{% url 'add_student' %}" class="btn">
+                <p class="btn-text">Add student</p>
+                <img src="{% static 'assets/icons/plus.svg' %}" alt="Plus icon" class="btn-icon">
+            </a>
+        </div>
+
+        <!-- DATA TABLES -->
+        <div class="student-data">
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Registration id.</th>
+                        <th>Name of the student</th>
+                        <th>Father's name</th>
+                        <th>Class</th>
+                        <th>Sex</th>
+                        <th style="text-align: center;">Status</th>
+                        <th style="text-align: center;">Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for student in students_list %}
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <!-- <td>1234</td> -->
+                        <td><a href="{% url 'student_detail' pk=student.pk %}">{{ student.student_name }}</a></td>
+                        <td>{{ student.father_name }}</td>
+                        <td>{{ student.class_admitted }}</td>
+                        <td>{{ student.sex }}</td>
+                        <td style="text-align: center;">Active</td>
+                        <td style="text-align: center;">
+                            <div class="action-btn">
+                                <img src="{% static 'assets/icons/delete.svg' %}" alt="Delete icon">
+                                <a href="/">Delete</a>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+
+            </table>
+
+            <p style="font-size: 0.791rem; color: var(--semi-black); font-weight: 400;">Showing {{ total_count }} of {{ total_count }} students.</p>
+
+        </div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+
+{% endblock %}

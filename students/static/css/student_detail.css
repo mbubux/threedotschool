@@ -1,0 +1,169 @@
+/* 
+VIEW DETAILS OF EACH INDIVIDUAL STUDENT
+*/
+
+.action-btn {
+    position: absolute;
+    top: 12%;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.action-btn .btn {
+    padding: 0.3rem 1rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    /* gap: 1rem; */
+    align-items: center;
+    justify-content: center;
+    background-color: var(--theme-color);
+    border-radius: 0.5rem;
+}
+
+
+.action-btn .btn img {
+    height: 24px;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+
+.action-btn .btn a {
+    text-decoration: none;
+    font-size: 0.831rem;
+    font-weight: 500;
+    color: var(--white);
+}
+
+
+
+.main-content {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    padding: 3rem 1.5rem 7rem;
+    margin-top: 7rem;
+    width: 85%;
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    border-radius: 1rem;
+}
+
+
+.student-detail {
+    /* padding: 3rem 1.5rem; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    /* background-color: var(--white); */
+    /* border-radius: 1rem; */
+}
+
+
+.student-detail .btn {
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--theme-color);
+    color: #fff;
+    font-size: 1.131rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+
+.student-detail .student-photo {
+    position: relative;
+    /* right: 10%;
+    top: 10%; */
+    width: 100px;
+    height: 110px;
+    background-color: #000;
+    border-radius: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+
+.student-detail .student-photo img {
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.student-detail .detail-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
+    align-items: start;
+    justify-content: center;
+}
+
+.student-detail .detail-section .section::before {
+    position: absolute;
+    left: 0;
+    top: -2.35rem;
+    padding: 0.5rem 1.5rem 1.9rem;
+    width: fit-content;
+    background-color: var(--theme-color);
+    border-radius: 1rem 1rem 0 0;
+    color: #fff;
+    font-size: 1.131rem;
+    font-weight: 600;
+    z-index: -1;
+}
+
+.student-detail .detail-section .basic-detail::before {
+    content: "Student's details ⑆";
+}
+
+.student-detail .detail-section .address::before {
+    content: "Address ⑆";
+}
+
+.student-detail .detail-section .bank-detail::before {
+    content: "Bank details ⑆";
+}
+
+.student-detail .detail-section .section {
+    position: relative;
+    padding: 3rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 1rem;
+    /* background-color: antiquewhite; */
+    background-color: var(--white);
+    border-radius: 1rem;
+
+}
+
+.student-detail .detail-section .section p {
+    font-size: 0.971rem;
+    font-weight: 300;
+    color: var(--semi-black);
+}
+
+.student-detail .detail-section .section p span {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--black);
+}

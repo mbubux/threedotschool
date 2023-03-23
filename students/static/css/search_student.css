@@ -1,0 +1,61 @@
+:root {
+    --warning-bg: #fffce3;
+    --warning-text-color: #d5a600;
+}
+
+
+.alert {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    position: absolute;
+    /* right: 1.5rem; */
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    -webkit-animation: alertAnim 0.1s linear forwards;
+    -moz-animation: alertAnim 0.1s linear forwards;
+    -o-animation: alertAnim 0.1s linear forwards;
+    animation: alertAnim 0.1s linear forwards;
+}
+
+.warning {
+    background-color: var(--warning-bg);
+    color: var(--warning-text-color);
+}
+
+.alert .alert-msg {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+
+.alert .alert-msg img {
+    height: 20px;
+    object-fit: contain;
+}
+
+
+.alert .alert-msg p {
+    font-size: 0.781rem;
+    font-weight: 400;
+}
+
+
+
+.alert button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.alert button img {
+    height: 20px;
+    object-fit: contain;
+}

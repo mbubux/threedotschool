@@ -1,0 +1,332 @@
+/* 
+ADD STUDENT PAGE
+REGISTRATION FORM
+*/
+
+
+:root {
+    --success-bg: #e3ffe4;
+    --success-text-color: #179800;
+    --error-bg: #ffe1e5;
+    --error-text-color: #ca001e;
+}
+
+
+.alert {
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    position: absolute;
+    /* right: 1.5rem; */
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    -webkit-animation: alertAnim 0.1s linear forwards;
+    -moz-animation: alertAnim 0.1s linear forwards;
+    -o-animation: alertAnim 0.1s linear forwards;
+    animation: alertAnim 0.1s linear forwards;
+}
+
+
+.success {
+    background-color: var(--success-bg);
+    color: var(--success-text-color);
+}
+
+
+.error {
+    background-color: var(--error-bg);
+    color: var(--error-text-color);
+}
+
+.alert .alert-msg {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+
+.alert .alert-msg img {
+    height: 20px;
+    object-fit: contain;
+}
+
+
+.alert .alert-msg p {
+    font-size: 0.781rem;
+    font-weight: 400;
+}
+
+
+
+.alert button {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+.alert button img {
+    height: 20px;
+    object-fit: contain;
+}
+
+
+.main-content {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    padding: 1.5rem 1.5rem 7rem;
+    margin-top: 3rem;
+    width: 85%;
+    height: 85%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    border-radius: 1rem;
+}
+
+
+.add-student-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: start;
+    justify-content: center;
+}
+
+
+.add-student-container h3 {
+    font-size: 1.581rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--theme-color);
+}
+
+
+.add-student-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+
+.add-student-container form .form-section {
+    /* padding: 0 3rem 3rem; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    /* background-color: var(--white); */
+    border-radius: 1rem;
+}
+
+.add-student-container form .form-section .form-section-title {
+    position: relative;
+    top: 3rem;
+    left: 0;
+    padding: 0.5rem 1.5rem 1.3rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--black);
+    border-radius: 1rem 1rem 0 0;
+    z-index: -1;
+}
+
+.add-student-container form .form-section .form-section-title p {
+    font-size: 0.931rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.add-student-container form .form-section .form-section-title img {
+    height: 20px;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+.add-student-container form .form-section .form-input {
+    padding: 3rem 1.5rem;
+    width: 100%;
+    display: grid;
+    gap: 2rem 3rem;
+    background-color: var(--white);
+    border-radius: 1rem;
+}
+
+.add-student-container form .form-section .form-input .input-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+
+.add-student-container form .form-section .form-input .input-group .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+
+.add-student-container form .form-section .form-input .input-group .wrapper img {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(2px);
+    height: 16px;
+    object-fit: contain;
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+.add-student-container form .form-section .form-input .input-group label {
+    padding-bottom: 0.3rem;
+    font-size: 0.931rem;
+    color: var(--black);
+    text-align: left;
+}
+
+
+.add-student-container form .form-section .form-input .input-group input {
+    padding: 0.7rem 1rem;
+    width: 100%;
+    border: none;
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.add-student-container form .form-section .form-input .input-group input:focus {
+    /* border: 1px solid var(--theme-color); */
+    background-color: var(--theme-color-light);
+    caret-color: var(--theme-color);
+}
+
+.add-student-container form .form-section .form-input .input-group input::file-selector-button {
+    padding: 0.6rem 1rem;
+    border: none;
+    background-color: var(--semi-black);
+    color: var(--white);
+    border-radius: 0.7rem;
+    font-size: 0.781rem;
+    font-weight: 700;
+    transition: background-color 0.2s linear;
+    cursor: pointer;
+}
+
+.add-student-container form .form-section .form-input .input-group input::file-selector-button:hover {
+    background-color: var(--black);
+}
+
+
+.add-student-container form .form-section .form-input .input-group select {
+    padding: 0.7rem 1rem;
+    width: 100%;
+    border: none;
+    background-color: var(--bg-color);
+    border-radius: 0.5rem;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.add-student-container form .form-section .form-input .input-group select:focus {
+    /* border: 1px solid var(--theme-color); */
+    background-color: var(--theme-color-light);
+    caret-color: var(--theme-color);
+}
+
+.add-student-container form button {
+    margin: 3rem 0;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--theme-color);
+    border: none;
+    outline: none;
+    border-radius: 0.5rem;
+    color: var(--white);
+    font-size: 1.131rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input::-webkit-calendar-picker-indicator {
+    opacity: 0.0000000001;
+    cursor: pointer;
+}
+
+
+/* input[type="file"],
+select,
+input[type="date"] {
+    color: var(--light-black);
+} */
+
+
+
+/* FORM SUBMISSION ALERT ANIMATION */
+@keyframes alertAnim {
+    from {
+        right: 0.5rem;
+    }
+
+    to {
+        right: 1.5rem;
+    }
+}
+
+@-moz-keyframes alertAnim {
+    from {
+        right: 0.5rem;
+    }
+
+    to {
+        right: 1.5rem;
+    }
+}
+
+@-webkit-keyframes alertAnim {
+    from {
+        right: 0.5rem;
+    }
+
+    to {
+        right: 1.5rem;
+    }
+}
+
+@-o-keyframes alertAnim {
+    from {
+        right: 0.5rem;
+    }
+
+    to {
+        right: 1.5rem;
+    }
+}

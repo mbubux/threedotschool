@@ -1,0 +1,208 @@
+/* NAVBAR STYELS */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 1rem;
+    width: 15%;
+    min-height: 100%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .app-logo-name-developer {
+    position: relative;
+    top: 0.3rem;
+    padding: 1rem 0rem;
+    width: 100%;
+    /* background-color: var(--black); */
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .app-logo-name-developer img {
+    width: 20%;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+.navbar .app-logo-name-developer .app-name-developer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.navbar .app-logo-name-developer .app-name-developer #app-name {
+    font-weight: 700;
+    color: #000;
+    font-size: 0.931rem;
+}
+
+.navbar .app-logo-name-developer .app-name-developer #app-developer {
+    font-weight: 300;
+    color: #000;
+    font-size: 0.751rem;
+}
+
+.navbar .app-logo-name-developer .app-name-developer #app-developer a {
+    font-weight: 500;
+    color: var(--theme-color);
+    font-size: 0.781rem;
+}
+
+.navbar .app-logo-name-developer .app-name-developer #app-developer a:hover,
+a:visited {
+    color: var(--theme-color);
+    cursor: pointer;
+}
+
+.navbar .navbar-items {
+    position: relative;
+    padding: 1rem 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: start;
+    justify-content: space-between;
+}
+
+
+.navbar .navbar-items .nav-item-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar .navbar-items .nav-item-group .nav-item-group-title {
+    font-weight: 300;
+    font-size: 0.781rem;
+    color: var(--light-black);
+}
+
+.navbar .navbar-items .nav-item-group .nav-item-link {
+    width: 100%;
+}
+
+
+.navbar .navbar-items .nav-item-group .nav-item-link a {
+    padding: 0.3rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
+}
+
+.navbar .navbar-items .nav-item-group .nav-item-link a:hover,
+.navbar .navbar-items .nav-item-group .nav-item-link a:visited {
+    background-color: var(--theme-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3ms linear;
+}
+
+.navbar .navbar-items .nav-item-group .nav-item-link a:hover .nav-item-link-img {
+    filter: invert(100%);
+}
+
+.navbar .navbar-items .nav-item-group .nav-item-link a:hover .nav-item-link-name {
+    color: var(--white);
+}
+
+.navbar .navbar-items .nav-item-group .nav-item-link a .nav-item-link-img {
+    height: 24px;
+    object-fit: contain;
+}
+
+.navbar .navbar-items .nav-item-group .nav-item-link a .nav-item-link-name {
+    font-weight: 500;
+    font-size: 0.781rem;
+    color: var(--black);
+}
+
+
+.navbar .offer {
+    padding: 1rem 0.5rem;
+    width: 100%;
+    height: 100px;
+    background-color: var(--theme-color);
+    background: conic-gradient(from 180deg at 50% 50%, #FF659C 0deg, #8000FF 360deg);
+    box-shadow: rgba(114, 93, 250, 0.25) 0px 13px 27px -5px, rgba(114, 93, 250, 0.3) 0px 8px 16px -8px;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.navbar .offer p {
+    font-weight: 500;
+    font-size: 1.131rem;
+    color: #ffffff;
+}
+
+.navbar .other {
+    position: relative;
+    bottom: 0.3rem;
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.navbar .other .settings,
+.navbar .other .login,
+.navbar .other .logout {
+    width: 100%;
+}
+
+
+
+
+.navbar .other a {
+    padding: 0.3rem 0.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
+}
+
+.navbar .other a:hover {
+    background-color: var(--theme-color);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3ms linear;
+}
+
+.navbar .other a .other-img {
+    height: 24px;
+    object-fit: contain;
+}
+
+.navbar .other a .other-text {
+    font-weight: 500;
+    font-size: 0.781rem;
+    color: #000000;
+}
+
+.navbar .other a:hover .other-img {
+    filter: invert(100%);
+}
+
+.navbar .other a:hover .other-text {
+    filter: invert(100%);
+}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+<!-- HTML HEAD CONTENTS -->
+{% block htmlhead %}
+
+{% load static %}
+
+<!-- CSS STYLES -->
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+{% endblock htmlhead %}
+
+
+<!-- MAIN BODY CONTENT -->
+{% block content %}
+
+<!-- HEADER -->
+<header class="header">
+    <!-- CLIENT'S SCHOOL -->
+    <div class="school">
+        <img src="{% static 'assets/icons/schmgsoft_logo.svg' %}" alt="School logo" id="school-logo">
+        <div class="school-detail">
+            <p class="school-name">ThreeDot School</p>
+            <p class="school-address">NAGARJHAR, HOWLY, BARPETA, ASSAM, 781316</p>
+        </div>
+    </div>
+
+    <!-- ADMIN DETAILS -->
+    <div class="admin">
+        <div class="admin-detail">
+            <p id="salutation">Hi!</p>
+            <p id="admin-name"><span>Mr.</span> Hasan</p>
+            <p id="greet"></p>
+        </div>
+
+        <div class="admin-photo">
+            <img src="{% static 'assets/images/hasan.png' %}" alt="Admin's photo">
+        </div>
+    </div>
+</header>
+
+{% endblock %}
